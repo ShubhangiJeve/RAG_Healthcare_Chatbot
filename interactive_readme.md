@@ -1,7 +1,7 @@
 # 🩺 HealthQuery AI - Healthcare RAG Chatbot
 
 <div align="center">
-  
+
 ![Python](https://img.shields.io/badge/Python-3.8+-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Flask](https://img.shields.io/badge/Flask-3.1.2-000000?style=for-the-badge&logo=flask&logoColor=white)
 ![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)
@@ -25,20 +25,12 @@
 <div align="center">
 
 ```mermaid
-graph TB
-    A[User Question] --> B[Flask Web Server]
-    B --> C[PDF Document Loader]
-    C --> D[Text Chunking]
-    D --> E[Embedding Model]
-    E --> F[FAISS Vector Store]
-    B --> G[Query Processing]
-    G --> H[Embedding Model]
-    H --> I[Similarity Search]
-    I --> F
-    F --> J[Retrieved Documents]
-    J --> K[Language Model]
-    K --> L[Generated Answer]
-    L --> M[Response to User]
+graph LR
+    A[🔍 Smart Retrieval] --> B[🧠 AI Processing]
+    B --> C[💬 Natural Response]
+    style A fill:#3498db,stroke:#2980b9,stroke-width:3px,color:#fff
+    style B fill:#e67e22,stroke:#d35400,stroke-width:3px,color:#fff
+    style C fill:#2ecc71,stroke:#27ae60,stroke-width:3px,color:#fff
 ```
 
 </div>
@@ -74,21 +66,68 @@ Our two-stage intelligent pipeline:
 
 ### 📊 System Flow Diagram
 
-![Architecture Diagram](architecture.svg)
-
-### 📈 Detailed Architecture
-
-The HealthQuery AI system consists of several key components working together:
-
-1. **Frontend Interface**: A responsive web interface built with React for interacting with the chatbot
-2. **Flask Backend**: A Python Flask server that handles API requests and coordinates the RAG pipeline
-3. **Document Processing Pipeline**: 
-   - PDF document loader that extracts text from medical documents
-   - Text chunking system that breaks documents into manageable pieces
-   - Embedding model that converts text to vector representations
-4. **Vector Store**: FAISS-based similarity search index for fast document retrieval
-5. **Language Model**: DialoGPT for generating natural language responses
-6. **API Layer**: RESTful endpoints for communication between frontend and backend
+```mermaid
+graph TB
+    %% Define enhanced styles
+    classDef component fill:#3498db,stroke:#2980b9,stroke-width:3px,color:#fff;
+    classDef data fill:#2ecc71,stroke:#27ae60,stroke-width:3px,color:#fff;
+    classDef process fill:#e67e22,stroke:#d35400,stroke-width:3px,color:#fff;
+    
+    %% User Interface Layer
+    A[💻 User Interface<br/>Web Browser]:::component
+    
+    %% Backend Server
+    B[🌐 Flask Web Server<br/>API Handler]:::component
+    
+    %% Data Sources
+    C[📄 Healthcare PDF Documents<br/>Medical Knowledge Base]:::data
+    
+    %% Processing Pipeline
+    D[📥 PDF Document Loader<br/>PyPDF Parser]:::process
+    E[✂️ Text Chunking<br/>500 chars + 50 overlap]:::process
+    F[🧠 Embedding Model<br/>all-MiniLM-L6-v2]:::process
+    G[🗃️ FAISS Vector Store<br/>Semantic Index]:::data
+    H[🔍 Query Processing<br/>Input Validation]:::process
+    J[🔎 Similarity Search<br/>Top-4 Results]:::process
+    I[📤 Retrieved Context<br/>Relevant Documents]:::data
+    M[🤖 Language Model<br/>DialoGPT-small]:::process
+    L[💬 Generated Answer<br/>Natural Language]:::data
+    K[📤 Response Delivery<br/>JSON Format]:::component
+    
+    %% Flow Connections
+    A -->|POST Request| B
+    B -->|Route| H
+    
+    %% Indexing Pipeline
+    C -->|Load| D
+    D -->|Extract| E
+    E -->|Chunk| F
+    F -->|Vectorize| G
+    
+    %% Query Pipeline
+    H -->|Encode| F
+    F -->|Vector| J
+    G -->|Search| J
+    J -->|Match| I
+    I -->|Context| M
+    M -->|Generate| L
+    L -->|Format| K
+    K -->|HTTP Response| A
+    
+    %% Phase Grouping
+    subgraph Offline["⚙️ Offline Indexing Phase"]
+        C
+        D
+        E
+    end
+    
+    subgraph Online["🔄 Online Query Phase"]
+        H
+        J
+        I
+        M
+    end
+```
 
 ### 🔧 Core Components
 
@@ -381,11 +420,13 @@ See the [LICENSE](LICENSE) file for details.
 
 ---
 
-## ⚠️ Disclaimer
+## 🌟 Star History
 
 <div align="center">
 
-This healthcare chatbot is designed for educational and informational purposes only. It is not intended to replace professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition.
+If you find this project helpful, please consider giving it a ⭐!
+
+[![Star History](https://img.shields.io/github/stars/yourusername/healthquery-ai?style=social)](https://github.com/yourusername/healthquery-ai/stargazers)
 
 </div>
 
