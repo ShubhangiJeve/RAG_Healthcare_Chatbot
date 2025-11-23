@@ -1,0 +1,55 @@
+```mermaid
+graph TB
+    %% Title: Healthcare RAG Chatbot System Architecture
+    
+    %% Define styles
+    classDef component fill:#3498db,stroke:#2980b9,stroke-width:2px;
+    classDef data fill:#2ecc71,stroke:#27ae60,stroke-width:2px;
+    classDef process fill:#e67e22,stroke:#d35400,stroke-width:2px;
+    
+    %% Components (Blue)
+    A[💻 User Interface<br>(Web Browser)]:::component
+    B[🌐 Flask Web Server]:::component
+    K[📤 Response to User]:::component
+    
+    %% Data Elements (Green)
+    C[📄 Healthcare PDF Documents]:::data
+    G[🗃️ FAISS Vector Store]:::data
+    I[📤 Retrieved Documents]:::data
+    L[💬 Generated Answer]:::data
+    
+    %% Process Elements (Orange)
+    D[📥 PDF Document Loader]:::process
+    E[✂️ Text Chunking]:::process
+    F[🧠 Embedding Model<br>(Sentence Transformers)]:::process
+    H[🔍 Query Processing]:::process
+    J[🔎 Similarity Search]:::process
+    M[🤖 Language Model<br>(DialoGPT)]:::process
+    
+    %% Connections
+    A -->|User Question| B
+    B -->|Process Query| H
+    H -->|Convert to Embeddings| F
+    C -->|Load Documents| D
+    D -->|Parse & Chunk| E
+    E -->|Generate Embeddings| F
+    F -->|Store Vectors| G
+    G -->|Search| J
+    F -->|Query Embeddings| J
+    J -->|Retrieve Matches| I
+    I -->|Context| M
+    M -->|Generate Response| L
+    L -->|Send Answer| K
+    
+    %% Legend
+    subgraph Legend
+        direction LR
+        component_legend[Component]:::component
+        data_legend[Data]:::data
+        process_legend[Process]:::process
+    end
+    
+    %% Data Flow Description
+    subgraph Data_Flow["Data Flow: User Question → Processing → Retrieval → Generation → Response"]
+    end
+```

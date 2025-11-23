@@ -1,0 +1,150 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900">
+  <style>
+    .component { fill: #3498db; stroke: #2980b9; stroke-width: 2px; }
+    .data { fill: #2ecc71; stroke: #27ae60; stroke-width: 2px; }
+    .process { fill: #e67e22; stroke: #d35400; stroke-width: 2px; }
+    .arrow { stroke: #34495e; stroke-width: 2px; marker-end: url(#arrowhead); fill: none; }
+    .label { font-family: 'Segoe UI', Arial, sans-serif; font-size: 14px; fill: #2c3e50; }
+    .title { font-family: 'Segoe UI', Arial, sans-serif; font-size: 20px; font-weight: bold; fill: #2c3e50; }
+    .subtitle { font-family: 'Segoe UI', Arial, sans-serif; font-size: 16px; font-weight: bold; fill: #2c3e50; }
+    .icon { font-size: 24px; text-anchor: middle; dominant-baseline: middle; }
+  </style>
+  
+  <defs>
+    <marker id="arrowhead" markerWidth="12" markerHeight="8" refX="12" refY="4" orient="auto">
+      <polygon points="0 0, 12 4, 0 8" fill="#34495e" />
+    </marker>
+  </defs>
+  
+  <!-- Title -->
+  <text x="600" y="40" class="title" text-anchor="middle">🏥 Healthcare RAG Chatbot System Architecture</text>
+  
+  <!-- User Interface -->
+  <rect x="100" y="120" width="150" height="70" class="component" rx="15" />
+  <text x="175" y="145" class="label" text-anchor="middle">💻 User Interface</text>
+  <text x="175" y="165" class="label" text-anchor="middle">(Web Browser)</text>
+  
+  <!-- Flask API -->
+  <rect x="350" y="120" width="150" height="70" class="component" rx="15" />
+  <text x="425" y="145" class="label" text-anchor="middle">🌐 Flask Web</text>
+  <text x="425" y="165" class="label" text-anchor="middle">Server</text>
+  
+  <!-- PDF Document -->
+  <rect x="100" y="300" width="150" height="70" class="data" rx="15" />
+  <text x="175" y="335" class="label" text-anchor="middle">📄 Healthcare PDF</text>
+  <text x="175" y="355" class="label" text-anchor="middle">Documents</text>
+  
+  <!-- Document Loader -->
+  <rect x="350" y="300" width="150" height="70" class="process" rx="15" />
+  <text x="425" y="335" class="label" text-anchor="middle">📥 PDF Document</text>
+  <text x="425" y="355" class="label" text-anchor="middle">Loader</text>
+  
+  <!-- Text Chunking -->
+  <rect x="600" y="300" width="150" height="70" class="process" rx="15" />
+  <text x="675" y="335" class="label" text-anchor="middle">✂️ Text Chunking</text>
+  
+  <!-- Embedding Model 1 -->
+  <rect x="850" y="300" width="150" height="70" class="process" rx="15" />
+  <text x="925" y="325" class="label" text-anchor="middle">🧠 Embedding Model</text>
+  <text x="925" y="345" class="label" text-anchor="middle">(Sentence Transformers)</text>
+  
+  <!-- FAISS Vector Store -->
+  <rect x="1050" y="300" width="150" height="70" class="data" rx="15" />
+  <text x="1125" y="335" class="label" text-anchor="middle">🗃️ FAISS Vector Store</text>
+  
+  <!-- Query Processing -->
+  <rect x="600" y="120" width="150" height="70" class="process" rx="15" />
+  <text x="675" y="145" class="label" text-anchor="middle">🔍 Query Processing</text>
+  
+  <!-- Embedding Model 2 -->
+  <rect x="850" y="120" width="150" height="70" class="process" rx="15" />
+  <text x="925" y="135" class="label" text-anchor="middle">🧠 Embedding Model</text>
+  <text x="925" y="155" class="label" text-anchor="middle">(Sentence Transformers)</text>
+  
+  <!-- Similarity Search -->
+  <rect x="850" y="480" width="150" height="70" class="process" rx="15" />
+  <text x="925" y="515" class="label" text-anchor="middle">🔎 Similarity Search</text>
+  
+  <!-- Retrieved Documents -->
+  <rect x="1050" y="480" width="150" height="70" class="data" rx="15" />
+  <text x="1125" y="515" class="label" text-anchor="middle">📤 Retrieved Documents</text>
+  
+  <!-- Language Model -->
+  <rect x="600" y="650" width="150" height="70" class="process" rx="15" />
+  <text x="675" y="675" class="label" text-anchor="middle">🤖 Language Model</text>
+  <text x="675" y="695" class="label" text-anchor="middle">(DialoGPT)</text>
+  
+  <!-- Generated Answer -->
+  <rect x="350" y="650" width="150" height="70" class="data" rx="15" />
+  <text x="425" y="685" class="label" text-anchor="middle">💬 Generated Answer</text>
+  
+  <!-- Response to User -->
+  <rect x="100" y="650" width="150" height="70" class="component" rx="15" />
+  <text x="175" y="685" class="label" text-anchor="middle">📤 Response to User</text>
+  
+  <!-- Arrows with labels -->
+  <!-- User to Flask -->
+  <line x1="250" y1="155" x2="350" y2="155" class="arrow" />
+  <text x="300" y="140" class="label" text-anchor="middle">User Question</text>
+  
+  <!-- Flask to Query Processing -->
+  <line x1="500" y1="155" x2="600" y2="155" class="arrow" />
+  <text x="550" y="140" class="label" text-anchor="middle">Process Query</text>
+  
+  <!-- Query Processing to Embedding Model -->
+  <line x1="750" y1="155" x2="850" y2="155" class="arrow" />
+  <text x="800" y="140" class="label" text-anchor="middle">Convert to Embeddings</text>
+  
+  <!-- Embedding Model to Similarity Search -->
+  <line x1="925" y1="190" x2="925" y2="480" class="arrow" />
+  <text x="945" y="335" class="label" transform="rotate(90, 945, 335)" text-anchor="middle">Query Embeddings</text>
+  
+  <!-- PDF to Document Loader -->
+  <line x1="250" y1="335" x2="350" y2="335" class="arrow" />
+  <text x="300" y="320" class="label" text-anchor="middle">Load Documents</text>
+  
+  <!-- Document Loader to Text Chunking -->
+  <line x1="500" y1="335" x2="600" y2="335" class="arrow" />
+  <text x="550" y="320" class="label" text-anchor="middle">Parse &amp; Chunk</text>
+  
+  <!-- Text Chunking to Embedding Model -->
+  <line x1="750" y1="335" x2="850" y2="335" class="arrow" />
+  <text x="800" y="320" class="label" text-anchor="middle">Generate Embeddings</text>
+  
+  <!-- Embedding Model to FAISS -->
+  <line x1="1000" y1="335" x2="1050" y2="335" class="arrow" />
+  <text x="1025" y="320" class="label" text-anchor="middle">Store Vectors</text>
+  
+  <!-- FAISS to Similarity Search -->
+  <line x1="1050" y1="335" x2="975" y2="480" class="arrow" />
+  <text x="1040" y="420" class="label" transform="rotate(-35, 1040, 420)" text-anchor="middle">Search</text>
+  
+  <!-- Similarity Search to Retrieved Documents -->
+  <line x1="1000" y1="515" x2="1050" y2="515" class="arrow" />
+  <text x="1025" y="500" class="label" text-anchor="middle">Retrieve Matches</text>
+  
+  <!-- Retrieved Documents to Language Model -->
+  <line x1="1050" y1="515" x2="725" y2="650" class="arrow" />
+  <text x="950" y="590" class="label" transform="rotate(-25, 950, 590)" text-anchor="middle">Context</text>
+  
+  <!-- Language Model to Generated Answer -->
+  <line x1="600" y1="685" x2="500" y2="685" class="arrow" />
+  <text x="550" y="670" class="label" text-anchor="middle">Generate Response</text>
+  
+  <!-- Generated Answer to Response to User -->
+  <line x1="350" y1="685" x2="250" y2="685" class="arrow" />
+  <text x="300" y="670" class="label" text-anchor="middle">Send Answer</text>
+  
+  <!-- Legend -->
+  <rect x="50" y="780" width="25" height="25" class="component" rx="5" />
+  <text x="90" y="798" class="label">Components</text>
+  
+  <rect x="220" y="780" width="25" height="25" class="data" rx="5" />
+  <text x="260" y="798" class="label">Data</text>
+  
+  <rect x="330" y="780" width="25" height="25" class="process" rx="5" />
+  <text x="370" y="798" class="label">Processes</text>
+  
+  <!-- Subtitle -->
+  <text x="600" y="840" class="subtitle" text-anchor="middle">Data Flow: User Question → Processing → Retrieval → Generation → Response</text>
+</svg>

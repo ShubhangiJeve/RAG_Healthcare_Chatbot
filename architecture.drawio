@@ -1,0 +1,215 @@
+<mxGraphModel dx="1422" dy="785" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" background="#ffffff" math="0" shadow="0">
+  <root>
+    <mxCell id="0"/>
+    <mxCell id="1" parent="0"/>
+    <mxCell id="2" value="&lt;b&gt;🏥 Healthcare RAG Chatbot System Architecture&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Segoe UI;fontSize=16;" vertex="1" parent="1">
+      <mxGeometry x="480" y="20" width="390" height="30" as="geometry"/>
+    </mxCell>
+    <mxCell id="3" value="&lt;b&gt;💻 User Interface&lt;/b&gt;&lt;br&gt;(Web Browser)" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fillColor=#3498db;strokeColor=#2980b9;fontFamily=Segoe UI;" vertex="1" parent="1">
+      <mxGeometry x="80" y="100" width="150" height="70" as="geometry"/>
+    </mxCell>
+    <mxCell id="4" value="&lt;b&gt;🌐 Flask Web Server&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fillColor=#3498db;strokeColor=#2980b9;fontFamily=Segoe UI;" vertex="1" parent="1">
+      <mxGeometry x="320" y="100" width="150" height="70" as="geometry"/>
+    </mxCell>
+    <mxCell id="5" value="&lt;b&gt;📄 Healthcare PDF Documents&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fillColor=#2ecc71;strokeColor=#27ae60;fontFamily=Segoe UI;" vertex="1" parent="1">
+      <mxGeometry x="80" y="280" width="150" height="70" as="geometry"/>
+    </mxCell>
+    <mxCell id="6" value="&lt;b&gt;📥 PDF Document Loader&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fillColor=#e67e22;strokeColor=#d35400;fontFamily=Segoe UI;" vertex="1" parent="1">
+      <mxGeometry x="320" y="280" width="150" height="70" as="geometry"/>
+    </mxCell>
+    <mxCell id="7" value="&lt;b&gt;✂️ Text Chunking&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fillColor=#e67e22;strokeColor=#d35400;fontFamily=Segoe UI;" vertex="1" parent="1">
+      <mxGeometry x="570" y="280" width="150" height="70" as="geometry"/>
+    </mxCell>
+    <mxCell id="8" value="&lt;b&gt;🧠 Embedding Model&lt;/b&gt;&lt;br&gt;(Sentence Transformers)" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fillColor=#e67e22;strokeColor=#d35400;fontFamily=Segoe UI;" vertex="1" parent="1">
+      <mxGeometry x="820" y="280" width="150" height="70" as="geometry"/>
+    </mxCell>
+    <mxCell id="9" value="&lt;b&gt;🗃️ FAISS Vector Store&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fillColor=#2ecc71;strokeColor=#27ae60;fontFamily=Segoe UI;" vertex="1" parent="1">
+      <mxGeometry x="1020" y="280" width="150" height="70" as="geometry"/>
+    </mxCell>
+    <mxCell id="10" value="&lt;b&gt;🔍 Query Processing&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fillColor=#e67e22;strokeColor=#d35400;fontFamily=Segoe UI;" vertex="1" parent="1">
+      <mxGeometry x="570" y="100" width="150" height="70" as="geometry"/>
+    </mxCell>
+    <mxCell id="11" value="&lt;b&gt;🧠 Embedding Model&lt;/b&gt;&lt;br&gt;(Sentence Transformers)" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fillColor=#e67e22;strokeColor=#d35400;fontFamily=Segoe UI;" vertex="1" parent="1">
+      <mxGeometry x="820" y="100" width="150" height="70" as="geometry"/>
+    </mxCell>
+    <mxCell id="12" value="&lt;b&gt;🔎 Similarity Search&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fillColor=#e67e22;strokeColor=#d35400;fontFamily=Segoe UI;" vertex="1" parent="1">
+      <mxGeometry x="820" y="460" width="150" height="70" as="geometry"/>
+    </mxCell>
+    <mxCell id="13" value="&lt;b&gt;📤 Retrieved Documents&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fillColor=#2ecc71;strokeColor=#27ae60;fontFamily=Segoe UI;" vertex="1" parent="1">
+      <mxGeometry x="1020" y="460" width="150" height="70" as="geometry"/>
+    </mxCell>
+    <mxCell id="14" value="&lt;b&gt;🤖 Language Model&lt;/b&gt;&lt;br&gt;(DialoGPT)" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fillColor=#e67e22;strokeColor=#d35400;fontFamily=Segoe UI;" vertex="1" parent="1">
+      <mxGeometry x="570" y="630" width="150" height="70" as="geometry"/>
+    </mxCell>
+    <mxCell id="15" value="&lt;b&gt;💬 Generated Answer&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fillColor=#2ecc71;strokeColor=#27ae60;fontFamily=Segoe UI;" vertex="1" parent="1">
+      <mxGeometry x="320" y="630" width="150" height="70" as="geometry"/>
+    </mxCell>
+    <mxCell id="16" value="&lt;b&gt;📤 Response to User&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fillColor=#3498db;strokeColor=#2980b9;fontFamily=Segoe UI;" vertex="1" parent="1">
+      <mxGeometry x="80" y="630" width="150" height="70" as="geometry"/>
+    </mxCell>
+    <mxCell id="17" value="" style="endArrow=classic;html=1;strokeColor=#34495e;strokeWidth=2;fontFamily=Segoe UI;entryX=0;entryY=0.5;exitX=1;exitY=0.5;" edge="1" parent="1" source="3" target="4">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <mxPoint x="80" y="810" as="sourcePoint"/>
+        <mxPoint x="130" y="760" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="18" value="User Question" style="text;html=1;resizable=0;points=[];align=center;verticalAlign=bottom;labelBackgroundColor=#ffffff;fontFamily=Segoe UI;" vertex="1" connectable="0" parent="17">
+      <mxGeometry x="-0.1282" y="2" relative="1" as="geometry">
+        <mxPoint x="22" y="-28" as="offset"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="19" value="" style="endArrow=classic;html=1;strokeColor=#34495e;strokeWidth=2;fontFamily=Segoe UI;entryX=0;entryY=0.5;exitX=1;exitY=0.5;" edge="1" parent="1" source="4" target="10">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <mxPoint x="240" y="145" as="sourcePoint"/>
+        <mxPoint x="390" y="145" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="20" value="Process Query" style="text;html=1;resizable=0;points=[];align=center;verticalAlign=bottom;labelBackgroundColor=#ffffff;fontFamily=Segoe UI;" vertex="1" connectable="0" parent="19">
+      <mxGeometry x="-0.1923" y="3" relative="1" as="geometry">
+        <mxPoint x="29" y="-27" as="offset"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="21" value="" style="endArrow=classic;html=1;strokeColor=#34495e;strokeWidth=2;fontFamily=Segoe UI;entryX=0;entryY=0.5;exitX=1;exitY=0.5;" edge="1" parent="1" source="10" target="11">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <mxPoint x="490" y="145" as="sourcePoint"/>
+        <mxPoint x="640" y="145" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="22" value="Convert to Embeddings" style="text;html=1;resizable=0;points=[];align=center;verticalAlign=bottom;labelBackgroundColor=#ffffff;fontFamily=Segoe UI;" vertex="1" connectable="0" parent="21">
+      <mxGeometry x="-0.0769" y="2" relative="1" as="geometry">
+        <mxPoint x="48" y="-28" as="offset"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="23" value="" style="endArrow=classic;html=1;strokeColor=#34495e;strokeWidth=2;fontFamily=Segoe UI;entryX=0;entryY=0.5;exitX=1;exitY=0.5;" edge="1" parent="1" source="5" target="6">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <mxPoint x="240" y="325" as="sourcePoint"/>
+        <mxPoint x="390" y="325" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="24" value="Load Documents" style="text;html=1;resizable=0;points=[];align=center;verticalAlign=bottom;labelBackgroundColor=#ffffff;fontFamily=Segoe UI;" vertex="1" connectable="0" parent="23">
+      <mxGeometry x="-0.1538" y="3" relative="1" as="geometry">
+        <mxPoint x="27" y="-27" as="offset"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="25" value="" style="endArrow=classic;html=1;strokeColor=#34495e;strokeWidth=2;fontFamily=Segoe UI;entryX=0;entryY=0.5;exitX=1;exitY=0.5;" edge="1" parent="1" source="6" target="7">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <mxPoint x="490" y="325" as="sourcePoint"/>
+        <mxPoint x="640" y="325" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="26" value="Parse &amp;amp; Chunk" style="text;html=1;resizable=0;points=[];align=center;verticalAlign=bottom;labelBackgroundColor=#ffffff;fontFamily=Segoe UI;" vertex="1" connectable="0" parent="25">
+      <mxGeometry x="-0.1698" y="3" relative="1" as="geometry">
+        <mxPoint x="22" y="-27" as="offset"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="27" value="" style="endArrow=classic;html=1;strokeColor=#34495e;strokeWidth=2;fontFamily=Segoe UI;entryX=0;entryY=0.5;exitX=1;exitY=0.5;" edge="1" parent="1" source="7" target="8">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <mxPoint x="740" y="325" as="sourcePoint"/>
+        <mxPoint x="890" y="325" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="28" value="Generate Embeddings" style="text;html=1;resizable=0;points=[];align=center;verticalAlign=bottom;labelBackgroundColor=#ffffff;fontFamily=Segoe UI;" vertex="1" connectable="0" parent="27">
+      <mxGeometry x="-0.1509" y="2" relative="1" as="geometry">
+        <mxPoint x="39" y="-28" as="offset"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="29" value="" style="endArrow=classic;html=1;strokeColor=#34495e;strokeWidth=2;fontFamily=Segoe UI;entryX=0;entryY=0.5;exitX=1;exitY=0.5;" edge="1" parent="1" source="8" target="9">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <mxPoint x="990" y="325" as="sourcePoint"/>
+        <mxPoint x="1140" y="325" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="30" value="Store Vectors" style="text;html=1;resizable=0;points=[];align=center;verticalAlign=bottom;labelBackgroundColor=#ffffff;fontFamily=Segoe UI;" vertex="1" connectable="0" parent="29">
+      <mxGeometry x="-0.1887" y="2" relative="1" as="geometry">
+        <mxPoint x="23" y="-28" as="offset"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="31" value="" style="endArrow=classic;html=1;strokeColor=#34495e;strokeWidth=2;fontFamily=Segoe UI;entryX=0.25;entryY=0;exitX=0.75;exitY=1;" edge="1" parent="1" source="11" target="12">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <mxPoint x="940" y="180" as="sourcePoint"/>
+        <mxPoint x="940" y="330" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="32" value="Query Embeddings" style="text;html=1;resizable=0;points=[];align=center;verticalAlign=bottom;labelBackgroundColor=#ffffff;fontFamily=Segoe UI;rotation=90;" vertex="1" connectable="0" parent="31">
+      <mxGeometry x="0.125" y="-15" relative="1" as="geometry">
+        <mxPoint x="15" y="-15" as="offset"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="33" value="" style="endArrow=classic;html=1;strokeColor=#34495e;strokeWidth=2;fontFamily=Segoe UI;entryX=0.75;entryY=0;exitX=0.25;exitY=1;" edge="1" parent="1" source="9" target="12">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <mxPoint x="1030" y="360" as="sourcePoint"/>
+        <mxPoint x="1030" y="510" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="34" value="Search" style="text;html=1;resizable=0;points=[];align=center;verticalAlign=bottom;labelBackgroundColor=#ffffff;fontFamily=Segoe UI;rotation=30;" vertex="1" connectable="0" parent="33">
+      <mxGeometry x="0.2826" y="-1" relative="1" as="geometry">
+        <mxPoint x="19" y="-49" as="offset"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="35" value="" style="endArrow=classic;html=1;strokeColor=#34495e;strokeWidth=2;fontFamily=Segoe UI;entryX=0;entryY=0.5;exitX=1;exitY=0.5;" edge="1" parent="1" source="12" target="13">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <mxPoint x="980" y="505" as="sourcePoint"/>
+        <mxPoint x="1130" y="505" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="36" value="Retrieve Matches" style="text;html=1;resizable=0;points=[];align=center;verticalAlign=bottom;labelBackgroundColor=#ffffff;fontFamily=Segoe UI;" vertex="1" connectable="0" parent="35">
+      <mxGeometry x="-0.1579" y="2" relative="1" as="geometry">
+        <mxPoint x="29" y="-28" as="offset"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="37" value="" style="endArrow=classic;html=1;strokeColor=#34495e;strokeWidth=2;fontFamily=Segoe UI;entryX=1;entryY=0.5;exitX=0.25;exitY=0;" edge="1" parent="1" source="14" target="13">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <mxPoint x="1030" y="590" as="sourcePoint"/>
+        <mxPoint x="1030" y="740" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="38" value="Context" style="text;html=1;resizable=0;points=[];align=center;verticalAlign=bottom;labelBackgroundColor=#ffffff;fontFamily=Segoe UI;rotation=-25;" vertex="1" connectable="0" parent="37">
+      <mxGeometry x="0.2581" y="-3" relative="1" as="geometry">
+        <mxPoint x="15" y="-65" as="offset"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="39" value="" style="endArrow=classic;html=1;strokeColor=#34495e;strokeWidth=2;fontFamily=Segoe UI;entryX=1;entryY=0.5;exitX=0;exitY=0.5;" edge="1" parent="1" source="14" target="15">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <mxPoint x="580" y="675" as="sourcePoint"/>
+        <mxPoint x="430" y="675" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="40" value="Generate Response" style="text;html=1;resizable=0;points=[];align=center;verticalAlign=bottom;labelBackgroundColor=#ffffff;fontFamily=Segoe UI;" vertex="1" connectable="0" parent="39">
+      <mxGeometry x="0.1053" y="3" relative="1" as="geometry">
+        <mxPoint x="-33" y="-27" as="offset"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="41" value="" style="endArrow=classic;html=1;strokeColor=#34495e;strokeWidth=2;fontFamily=Segoe UI;entryX=1;entryY=0.5;exitX=0;exitY=0.5;" edge="1" parent="1" source="15" target="16">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <mxPoint x="330" y="675" as="sourcePoint"/>
+        <mxPoint x="180" y="675" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="42" value="Send Answer" style="text;html=1;resizable=0;points=[];align=center;verticalAlign=bottom;labelBackgroundColor=#ffffff;fontFamily=Segoe UI;" vertex="1" connectable="0" parent="41">
+      <mxGeometry x="0.1579" y="2" relative="1" as="geometry">
+        <mxPoint x="-23" y="-28" as="offset"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="43" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#3498db;strokeColor=#2980b9;fontFamily=Segoe UI;" vertex="1" parent="1">
+      <mxGeometry x="40" y="760" width="20" height="20" as="geometry"/>
+    </mxCell>
+    <mxCell id="44" value="Components" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Segoe UI;" vertex="1" parent="1">
+      <mxGeometry x="70" y="760" width="80" height="20" as="geometry"/>
+    </mxCell>
+    <mxCell id="45" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#2ecc71;strokeColor=#27ae60;fontFamily=Segoe UI;" vertex="1" parent="1">
+      <mxGeometry x="180" y="760" width="20" height="20" as="geometry"/>
+    </mxCell>
+    <mxCell id="46" value="Data" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Segoe UI;" vertex="1" parent="1">
+      <mxGeometry x="210" y="760" width="70" height="20" as="geometry"/>
+    </mxCell>
+    <mxCell id="47" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e67e22;strokeColor=#d35400;fontFamily=Segoe UI;" vertex="1" parent="1">
+      <mxGeometry x="300" y="760" width="20" height="20" as="geometry"/>
+    </mxCell>
+    <mxCell id="48" value="Processes" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Segoe UI;" vertex="1" parent="1">
+      <mxGeometry x="330" y="760" width="80" height="20" as="geometry"/>
+    </mxCell>
+    <mxCell id="49" value="&lt;b&gt;Data Flow: User Question → Processing → Retrieval → Generation → Response&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Segoe UI;fontSize=14;" vertex="1" parent="1">
+      <mxGeometry x="385" y="790" width="590" height="20" as="geometry"/>
+    </mxCell>
+  </root>
+</mxGraphModel>
