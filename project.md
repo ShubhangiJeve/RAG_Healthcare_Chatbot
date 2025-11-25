@@ -56,33 +56,28 @@ The system performs the following functions:
 
 ## System Architecture
 
-```mermaid
+```
 graph TB
-    %% Define enhanced styles
-    classDef component fill:#3498db,stroke:#2980b9,stroke-width:3px,color:#fff;
-    classDef data fill:#2ecc71,stroke:#27ae60,stroke-width:3px,color:#fff;
-    classDef process fill:#e67e22,stroke:#d35400,stroke-width:3px,color:#fff;
-    
     %% User Interface Layer
-    A[💻 User Interface<br/>Web Browser]:::component
+    A[💻 User Interface<br/>Web Browser]
     
     %% Backend Server
-    B[🌐 Flask Web Server<br/>API Handler]:::component
+    B[🌐 Flask Web Server<br/>API Handler]
     
     %% Data Sources
-    C[📄 Healthcare PDF Documents<br/>Medical Knowledge Base]:::data
+    C[📄 Healthcare PDF Documents<br/>Medical Knowledge Base]
     
     %% Processing Pipeline
-    D[📥 PDF Document Loader<br/>PyPDF Parser]:::process
-    E[✂️ Text Chunking<br/>500 chars + 50 overlap]:::process
-    F[🧠 Embedding Model<br/>all-MiniLM-L6-v2]:::process
-    G[🗃️ FAISS Vector Store<br/>Semantic Index]:::data
-    H[🔍 Query Processing<br/>Input Validation]:::process
-    J[🔎 Similarity Search<br/>Top-4 Results]:::process
-    I[📤 Retrieved Context<br/>Relevant Documents]:::data
-    M[🤖 Language Model<br/>DialoGPT-small]:::process
-    L[💬 Generated Answer<br/>Natural Language]:::data
-    K[📤 Response Delivery<br/>JSON Format]:::component
+    D[📥 PDF Document Loader<br/>PyPDF Parser]
+    E[✂️ Text Chunking<br/>500 chars + 50 overlap]
+    F[🧠 Embedding Model<br/>all-MiniLM-L6-v2]
+    G[🗃️ FAISS Vector Store<br/>Semantic Index]
+    H[🔍 Query Processing<br/>Input Validation]
+    J[🔎 Similarity Search<br/>Top-4 Results]
+    I[📤 Retrieved Context<br/>Relevant Documents]
+    M[🤖 Language Model<br/>DialoGPT-small]
+    L[💬 Generated Answer<br/>Natural Language]
+    K[📤 Response Delivery<br/>JSON Format]
     
     %% Flow Connections
     A -->|POST Request| B
@@ -105,23 +100,37 @@ graph TB
     K -->|HTTP Response| A
     
     %% Phase Grouping
-    subgraph Offline["⚙️ Offline Indexing Phase"]
+    subgraph Offline[Offline Indexing Phase]
         C
         D
         E
     end
     
-    subgraph Online["🔄 Online Query Phase"]
+    subgraph Online[Online Query Phase]
         H
         J
         I
         M
     end
+    
+    style A fill:#3498db,stroke:#2980b9,stroke-width:3px,color:#fff
+    style B fill:#3498db,stroke:#2980b9,stroke-width:3px,color:#fff
+    style C fill:#2ecc71,stroke:#27ae60,stroke-width:3px,color:#fff
+    style D fill:#e67e22,stroke:#d35400,stroke-width:3px,color:#fff
+    style E fill:#e67e22,stroke:#d35400,stroke-width:3px,color:#fff
+    style F fill:#e67e22,stroke:#d35400,stroke-width:3px,color:#fff
+    style G fill:#2ecc71,stroke:#27ae60,stroke-width:3px,color:#fff
+    style H fill:#e67e22,stroke:#d35400,stroke-width:3px,color:#fff
+    style J fill:#e67e22,stroke:#d35400,stroke-width:3px,color:#fff
+    style I fill:#2ecc71,stroke:#27ae60,stroke-width:3px,color:#fff
+    style M fill:#e67e22,stroke:#d35400,stroke-width:3px,color:#fff
+    style L fill:#2ecc71,stroke:#27ae60,stroke-width:3px,color:#fff
+    style K fill:#3498db,stroke:#2980b9,stroke-width:3px,color:#fff
 ```
 
 ## Data Flow Diagram
 
-```mermaid
+```
 graph LR
     A[User Question] --> B[Web Interface]
     B --> C[HTTP Request]
@@ -142,7 +151,7 @@ graph LR
 
 ## User Flow Diagram
 
-```mermaid
+```
 graph TD
     A[User opens web interface] --> B[Landing Page]
     B --> C[Click Start Consultation]
